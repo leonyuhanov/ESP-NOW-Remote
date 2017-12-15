@@ -12,13 +12,11 @@ byte buttonArray[numberOfInputs] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}, testData[7
 unsigned short int cnt=0, inCounter=0, inputResult=0;
 unsigned long timers[3], defaultIOTimeout = 250;
 
-//network stuff
+//MAC address of the Receiver
 byte broadCastAddress[] = {0x36, 0x33, 0x33, 0x33, 0x33, 0x33};
-//byte broadCastAddress[] = {0x5C, 0xCF, 0x7F, 0x17, 0xA4, 0xED};
 
 void setup() 
 {
-  //Serial.begin(115200);
   WiFi.mode(WIFI_STA);
   WiFi.begin();
   esp_now_init();
@@ -55,15 +53,7 @@ void loop()
 {
   if( readButtons() == 1)
   {
-    //Test for diferent Data Length
-    if(buttonArray[numberOfInputs-1]==1)
-    {
-      esp_now_send(broadCastAddress, testData, 7);
-    }
-    else
-    {
       esp_now_send(broadCastAddress, buttonArray, numberOfInputs);
-    }
   }
   yield();  
 }
