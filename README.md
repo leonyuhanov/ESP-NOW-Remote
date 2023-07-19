@@ -2,14 +2,5 @@
 A simple 16 button ESP-NOW remote for the esp8266
 
 # Circuit Diagram
-Maybe coming soon...
+![Circuit Diagram](https://github.com/leonyuhanov/ESP-NOW-Remote/blob/master/Schematic_ESP8266%2016Button%20ESPNOW%20Remote_2023-07-19.png)
 
-# Pinouts
-
-Using the HC4067 16 Chan Multiplexer, connect the Address Pins 0-3:
-  
-  - Multiplexer Address Pin 0 -> D1
-  - Multiplexer Address Pin 1 -> D2
-  - Multiplexer Address Pin 2 -> D3
-  - Multiplexer Address Pin 3 -> D4
-  - Multiplexer Signal pin -> D0
